@@ -110,6 +110,11 @@ namespace cefsharptest
 
         public float[] livelyGetSystemAudioSpectrum()
         {
+            System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)System.Threading.Thread.CurrentThread.CurrentCulture.Clone();
+            customCulture.NumberFormat.NumberDecimalSeparator = ".";
+
+            System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
+
             var fftBuffer = new float[(int)FftSize];
             if (SpectrumProvider.GetFftData(fftBuffer, this))
             {
