@@ -475,7 +475,7 @@ namespace cefsharptest
         }
 
         BasicSpectrumProvider spectrumProvider;
-        const FftSize fftSize = FftSize.Fft128; //128 sample values
+        const FftSize fftSize = FftSize.Fft4096; //4096 sample values
         /// <summary>
         /// 
         /// </summary>
